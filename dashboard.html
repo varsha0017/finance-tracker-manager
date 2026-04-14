@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Premium Finance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="dashboard">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">
+        <h1 class="title" style="margin: 0;">💸 Finance Dashboard</h1>
+        <button onclick="logout()" style="width: auto; padding: 10px 20px; background: #f43f5e; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 15px rgba(244, 63, 94, 0.3);">
+            Logout
+        </button>
+    </div>
+
+    <div class="card-container">
+        <div class="card income">
+            <h3>Total Income</h3>
+            <p id="income">₹0</p>
+        </div>
+        <div class="card expense">
+            <h3>Total Expense</h3>
+            <p id="expense">₹0</p>
+        </div>
+        <div class="card savings">
+            <h3>Net Savings</h3>
+            <p id="savings">₹0</p>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="form-section">
+            <h2>Update Finance</h2>
+            <input type="number" id="incomeInput" placeholder="Monthly Income">
+            <input type="number" id="expenseInput" placeholder="Monthly Expense">
+            <button onclick="calculate()">Refresh Data</button>
+            
+            <div class="suggestion-box">
+                <h3 style="margin-top:0">Smart Insights 🧠</h3>
+                <p id="investment">Enter details to see suggestions</p>
+                <p id="stocks" style="font-weight: bold; color: #818cf8; min-height: 20px;"></p>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
